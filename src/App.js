@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, { useState } from "react";
+import SleepForm from "./SleepForm";
+import SleepList from "./SleepList";
+import SleepChart from "./SleepChart";
 
 function App() {
+  const [sleepRecords, setSleepRecords] = useState([]);
+
+  const addSleepRecord = (record) => {
+    const duration = calculateDuration(record.sleepTime, record.wakeTime);
+    setSleepRecords([...sleepRecords, { ...record, duration }]);
+  };
+
+  const calculateDuration = (sleepTime, wakeTime) => {
+    const start = new Date(sleepTime);
+    const end = new Date(wakeTime);
+    const duration = (end - start) / (1000 * 60 * 60); 
+    return duration.toFixed(2);
+  };
+
+ 
+  const handleDelete = (indexToRemove) => {
+    setSleepRecords((prevRecords) =>
+      prevRecords.filter((_, index) => index !== indexToRemove)
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Sleep Tracker</h1>
+      <SleepForm addSleepRecord={addSleepRecord} />
+      <SleepList sleepRecords={sleepRecords} onDelete={handleDelete} />
+      <SleepChart sleepRecords={sleepRecords} />
     </div>
   );
 }
