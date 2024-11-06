@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 
 function SleepList({ sleepRecords, onDelete, analyzeSleep }) {
@@ -40,7 +43,9 @@ function SleepList({ sleepRecords, onDelete, analyzeSleep }) {
                 {/* Pass totalHours correctly here */}
                 <p>{analyzeSleep(totalHours)}</p>
               </div>
-              <button onClick={() => onDelete(index)}>Delete</button>
+              <button onClick={() => onDelete(index)}>
+              <FontAwesomeIcon icon={faTrashAlt} />
+            </button>
             </li>
           );
         })}
