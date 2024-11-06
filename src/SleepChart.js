@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from "react";
 import { Chart } from "chart.js/auto";
 
@@ -14,14 +13,13 @@ function SleepChart({ sleepRecords }) {
           datasets: [
             {
               label: "Sleep Duration (hours)",
-              data: sleepRecords.map((record) => record.duration),
+              data: sleepRecords.map((record) => record.duration.totalHours),
               borderColor: "rgba(75,192,192,1)",
               fill: false,
             },
           ],
         },
       });
-
 
       return () => chartInstance.destroy();
     }

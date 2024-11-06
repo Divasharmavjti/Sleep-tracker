@@ -9,11 +9,33 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f9;
+  overflow-y: scroll;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px; /* To prevent content from touching the edges */
 }
+
+/* Main App Container Styling */
+#root {
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  height: 80vh; /* Allows for some height without overflow */
+  overflow-y: auto; /* Enables scrolling within the container */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Form and List Styling */
+form,
+.sleep-list,
+.sleep-chart {
+  margin-bottom: 20px;
+}
+
 
 /* Login Container */
 .login-container {
@@ -27,12 +49,12 @@ body {
 .login-container h2 {
   margin-bottom: 20px;
   text-align: center;
-  color: #333;
+  color: #1c813a;
 }
 
 /* Form Styling */
 form {
-  display: flex;
+  display:flexbox;
   flex-direction: column;
 }
 
@@ -46,12 +68,12 @@ form input {
 
 form input:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #0a591d;
 }
 
 form button {
   padding: 10px;
-  background-color: #007bff;
+  background-color: #29ad67;
   color: white;
   border: none;
   border-radius: 5px;
@@ -60,7 +82,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #0056b3;
+  background-color: #08441d;
 }
 
 /* Error Message Styling */
@@ -76,3 +98,10 @@ form button:hover {
   text-align: center;
   margin-bottom: 15px;
 }
+/* .danger-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 90%;
+  margin-right: 10px;
+} */
