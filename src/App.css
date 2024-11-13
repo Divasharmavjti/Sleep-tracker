@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Center the app content
 .App {
   display: flex;
@@ -33,3 +34,112 @@ button {
 button:hover {
   opacity: 0.9;
 }
+=======
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px; /* To prevent content from touching the edges */
+}
+
+/* Main App Container Styling */
+#root {
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  height: 80vh; /* Allows for some height without overflow */
+  overflow-y: auto; /* Enables scrolling within the container */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Form and List Styling */
+form,
+.sleep-list,
+.sleep-chart {
+  margin-bottom: 20px;
+}
+
+
+/* Login Container */
+.login-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 400px;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1c813a;
+}
+
+/* Form Styling */
+form {
+  display:flexbox;
+  flex-direction: column;
+}
+
+form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #0a591d;
+}
+
+form button {
+  padding: 10px;
+  background-color: #29ad67;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background-color: #08441d;
+}
+
+/* Error Message Styling */
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Success Message Styling */
+.success-message {
+  color: green;
+  text-align: center;
+  margin-bottom: 15px;
+}
+/* .danger-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 90%;
+  margin-right: 10px;
+} */
+>>>>>>> d130f64abfd1fc1cab85a2f469410a5d56bc2c95
